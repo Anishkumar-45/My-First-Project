@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeStay | Premium Hotel Booking</title>
+
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- App Scripts -->
+    <!-- We use type="text/babel" and data-type="module" to allow imports if served via HTTP -->
+    <!-- However, Babel standalone with imports is tricky. We will use a global variable approach or a simple module loader if needed. -->
+    <!-- For simplicity and robustness with Babel standalone, we'll load components in order. -->
+
+    <script type="text/babel" data-presets="react" src="src/data.js"></script>
+    <script type="text/babel" data-presets="react" src="src/components/Navbar.js"></script>
+    <script type="text/babel" data-presets="react" src="src/components/Hero.js"></script>
+    <script type="text/babel" data-presets="react" src="src/components/HotelCard.js"></script>
+    <script type="text/babel" data-presets="react" src="src/components/HotelList.js"></script>
+    <script type="text/babel" data-presets="react" src="src/components/BookingForm.js"></script>
+    <script type="text/babel" data-presets="react" src="src/App.js"></script>
+
+    <script>
+        // Initialize Lucide icons after render (handled in components usually, but good to have global)
+        window.onload = () => {
+            if (window.lucide) lucide.createIcons();
+        };
+    </script>
+</body>
+
+</html>
